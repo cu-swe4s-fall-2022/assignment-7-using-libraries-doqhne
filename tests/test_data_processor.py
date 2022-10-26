@@ -19,3 +19,7 @@ class TestUtils(unittest.TestCase):
         # Make sure inputs are integers
         with self.assertRaises(TypeError):
             dp.get_random_matrix(3.5, 13)
+
+        # Make sure inputs are greater than 0
+        with self.assertRaises(ValueError):
+            dp.get_random_matrix(-3, 0)
