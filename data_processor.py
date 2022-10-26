@@ -3,7 +3,7 @@ Functions to aid in data processing
 
     * get_random_matrix : Creates an MxN matrix filled with random numbers
     * get_file_dimensions : Find the shape of a csv file
-    * write_matrix_to_file : 
+    * write_matrix_to_file : Write a random matrix to a csv file
 '''
 
 import numpy as np
@@ -65,6 +65,20 @@ def get_file_dimensions(file_name):
 
 
 def write_matrix_to_file(num_rows, num_columns, file_name):
+    '''
+    Writes an MxN matrix filled with random numbers to a csv file
+
+    Parameters
+    ----------
+    num_rows : The number of rows in the matrix. Expects int>0
+    num_cols : The number of columns in the matrix. Expects int>0
+    file_name : The name of file to write to
+
+    Returns
+    -------
+    None,  a csv file is created with name file_name
+
+    '''
     # Create a random matrix
     matrix = get_random_matrix(num_rows, num_columns)
     
