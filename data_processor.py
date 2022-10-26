@@ -63,5 +63,18 @@ def get_file_dimensions(file_name):
 
     return dims
 
+
 def write_matrix_to_file(num_rows, num_columns, file_name):
-	return None
+    # Create a random matrix
+    matrix = get_random_matrix(num_rows, num_columns)
+    
+    # Create a header
+    header=np.arange(0, num_columns)
+    header_str = np.array2string(header, separator=',')
+    header_str = header_str.replace('[', '')
+    header_str = header_str.replace(']', '')
+    
+    # Save the file as a csv file
+    np.savetxt(file_name, matrix, delimiter=',', header=header_str)
+
+    return None
