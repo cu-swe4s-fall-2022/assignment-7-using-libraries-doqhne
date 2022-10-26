@@ -2,7 +2,7 @@
 Functions to aid in data processing
 
     * get_random_matrix : Creates an MxN matrix filled with random numbers
-    * get_file_dimensions :
+    * get_file_dimensions : Find the shape of a csv file
     * write_matrix_to_file : 
 '''
 
@@ -40,8 +40,22 @@ def get_random_matrix(num_rows, num_columns):
 
 
 def get_file_dimensions(file_name):
+    '''
+    Find the shape of a csv file
+
+    Parameters
+    ----------
+    file_name : The name of the csv file
+
+    Returns
+    -------
+    dims : The dimensions of the file (rows, cols)
+
+    '''
     file = pd.read_csv(file_name)
-    return file.shape
+    dims = file.shape
+
+    return dims
 
 def write_matrix_to_file(num_rows, num_columns, file_name):
 	return None
