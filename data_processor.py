@@ -24,6 +24,12 @@ def get_random_matrix(num_rows, num_columns):
     matrix : An matrix with random numbers
 
     '''
+    # Make sure inputs are integers
+    if not isinstance(num_rows, int):
+        raise TypeError("num_rows must be type int")
+    if not isinstance(num_columns, int):
+        raise TypeError("num_columns must be type int")
+
     matrix = np.random.rand(num_rows, num_columns)
 
     return matrix
