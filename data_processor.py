@@ -40,7 +40,8 @@ def get_random_matrix(num_rows, num_columns):
 
 
 def get_file_dimensions(file_name):
-	return (0,0)
+    file = pd.read_csv(file_name)
+    return file.shape
 
 def write_matrix_to_file(num_rows, num_columns, file_name):
 	return None
