@@ -6,8 +6,28 @@ Functions to aid in data processing
     * write_matrix_to_file : 
 '''
 
+import numpy as np
+import pandas as pd
+
+
 def get_random_matrix(num_rows, num_columns):
-	return None
+    '''
+    Creates an MxN matrix filled with random numbers
+
+    Parameters
+    ----------
+    num_rows : The number of rows in the matrix. Expects int>0
+    num_cols : The number of columns in the matrix. Expects int>0
+
+    Returns
+    -------
+    matrix : An matrix with random numbers
+
+    '''
+    matrix = np.random.rand(num_rows, num_columns)
+
+    return matrix
+
 
 def get_file_dimensions(file_name):
 	return (0,0)
