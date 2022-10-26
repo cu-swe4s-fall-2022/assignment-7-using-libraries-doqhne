@@ -36,3 +36,7 @@ class TestUtils(unittest.TestCase):
     def test_get_file_dimensions(self):
         # Positive test
         self.assertEqual(dp.get_file_dimensions(self.iris), (149, 5))
+        
+        # Raise error if file cannot be accessed
+        with self.assertRaises(Exception):
+            dp.get_file_dimensions('not_a_file.txt')
