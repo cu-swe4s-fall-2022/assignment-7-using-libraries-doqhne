@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import os
 import sys
+import pathlib as pl
 sys.path.append('../')
 
 
@@ -37,6 +38,18 @@ class TestUtils(unittest.TestCase):
         # Positive test
         self.assertEqual(dp.get_file_dimensions(self.iris), (149, 5))
         
-        # Raise error if file cannot be accessed
-        with self.assertRaises(Exception):
-            dp.get_file_dimensions('not_a_file.txt')
+        # Negative test
+        self.assertNotEqual(dp.get_file_dimensions(self.iris), (5, 149))
+    
+    
+    def test_write_matrix_to_file(self):
+        # Positive test
+        self.assertEqual(dp.write_matrix_to_file(3, 2, 'test_file.csv'), None)
+        
+        # CHeck file is outputted
+        path = pl.Path("./test_file.csv")
+        self.assertTrue(path.is_file())
+        self.assertTrue(path.parent.is_dir())
+
+        
+        
