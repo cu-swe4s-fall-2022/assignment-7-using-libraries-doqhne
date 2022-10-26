@@ -52,7 +52,13 @@ def get_file_dimensions(file_name):
     dims : The dimensions of the file (rows, cols)
 
     '''
-    file = pd.read_csv(file_name)
+    try:
+        file = pd.read_csv(file_name)
+    except FileNotFoundError:
+        print("Could not find ", file_name)
+    except PermissionError:
+        print("Could not find ", file_name)
+
     dims = file.shape
 
     return dims
