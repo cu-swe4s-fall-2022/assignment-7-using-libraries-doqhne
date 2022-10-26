@@ -29,9 +29,9 @@ def get_random_matrix(num_rows, num_columns):
         raise TypeError("num_rows must be type int")
     if not isinstance(num_columns, int):
         raise TypeError("num_columns must be type int")
-    
+
     # Make sure inputs are greater than 0
-    if (num_rows<0 or num_columns<0):
+    if (num_rows < 0 or num_columns < 0):
         raise ValueError("Inputs must be integers greater than 0")
 
     matrix = np.random.rand(num_rows, num_columns)
@@ -81,13 +81,13 @@ def write_matrix_to_file(num_rows, num_columns, file_name):
     '''
     # Create a random matrix
     matrix = get_random_matrix(num_rows, num_columns)
-    
+
     # Create a header
-    header=np.arange(0, num_columns)
+    header = np.arange(0, num_columns)
     header_str = np.array2string(header, separator=',')
     header_str = header_str.replace('[', '')
     header_str = header_str.replace(']', '')
-    
+
     # Save the file as a csv file
     np.savetxt(file_name, matrix, delimiter=',', header=header_str)
 
