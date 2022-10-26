@@ -11,16 +11,11 @@ sys.path.append('../')
 class TestUtils(unittest.TestCase):
     def setUp(self):
         self.iris = 'iris.data'
-        # iris = pd.read_csv(file_name, header=None)
-        # iris.columns = ['sepal_width',
-        #                 'sepal_length',
-        #                 'petal_width',
-        #                 'petal_length',
-        #                 'species']
-        # self.iris = iris
+
 
     def tearDown(self):
         return None
+ 
 
     def test_get_random_matrix(self):
         # Make sure matrix is correct shape
@@ -36,7 +31,8 @@ class TestUtils(unittest.TestCase):
         # Make sure inputs are greater than 0
         with self.assertRaises(ValueError):
             dp.get_random_matrix(-3, 0)
-            
+
+
     def test_get_file_dimensions(self):
         # Positive test
-        self.assertEqual(dp.get_file_dimensions(self.iris), (150, 5))
+        self.assertEqual(dp.get_file_dimensions(self.iris), (149, 5))
