@@ -29,6 +29,10 @@ def get_random_matrix(num_rows, num_columns):
         raise TypeError("num_rows must be type int")
     if not isinstance(num_columns, int):
         raise TypeError("num_columns must be type int")
+    
+    # Make sure inputs are greater than 0
+    if (num_rows<0 or num_columns<0):
+        raise ValueError("Inputs must be integers greater than 0")
 
     matrix = np.random.rand(num_rows, num_columns)
 
